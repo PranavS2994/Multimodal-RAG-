@@ -183,7 +183,7 @@ if "active_collection" in st.session_state:
 
     # Replay the conversation history
     for msg in st.session_state.messages:
-        with st.chat_message(msg["role"]):
+        with st.chat_message(msg["role"], avatar="P" if msg["role"] == "user" else "🤖"):
             st.markdown(msg["content"])
 
     # Input row: mic on the left, text box on the right
@@ -210,7 +210,7 @@ if "active_collection" in st.session_state:
     user_query = voice_input if voice_input else text_input
 
     if user_query:
-        with st.chat_message("user"):
+        with st.chat_message("user", avatar="P"):
             st.markdown(user_query)
         st.session_state.messages.append({"role": "user", "content": user_query})
 

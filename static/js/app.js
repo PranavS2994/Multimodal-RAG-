@@ -311,7 +311,7 @@ function appendMessage(role, content, sources = []) {
 
   const avatar = document.createElement('div');
   avatar.className = `avatar ${role === 'user' ? 'user-avatar' : 'bot-avatar'}`;
-  avatar.textContent = role === 'user' ? 'U' : 'AI';
+  avatar.textContent = role === 'user' ? 'P' : 'AI';
 
   const contentBox = document.createElement('div');
   contentBox.className = 'message-content';
